@@ -13,9 +13,12 @@ public class RandomCube : MonoBehaviour
 
     private List<GameObject> gameObjectsList;
     private int whichNumber;
+    private int rnd;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rnd = Random.Range(1, 4);
+
         gameObjectsList = new List<GameObject>();
         gameObjectsList.Add(cube1);
         gameObjectsList.Add(cube2);
@@ -43,8 +46,6 @@ public class RandomCube : MonoBehaviour
 
     void WhichCubeIsCorrect(int whichNumber)
     {
-        int rnd = Random.Range(1, 4);
-        Debug.Log(rnd);
         var text = GetComponent<TextMeshProUGUI>();
         if (whichNumber == rnd) 
         {
